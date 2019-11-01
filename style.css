@@ -1,15 +1,45 @@
 body {
     background-color: gold;
+    text-align: center;
+    min-width: 600px;
 }
 #keyboard {
-    width: 650px;
-    height: 300px;
-    background-color: rgba(48, 189, 199, 0.295);
+    text-align: center;
 }
-#num {
-    width: 30px;
-    height: 30px;
-    background-color: rgba(222, 253, 252, 0.76);
+.num {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.89);
     border-radius: 5px;
     border: 1px solid rgb(141, 135, 135);
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+#backspace {
+    width: 90px;
+}
+#tab {
+    width: 60px;
+}
+#capslock {
+    width: 82px;
+}
+#enter {
+    width: 80px;
+}
+#shift {
+    width: 81px;
+}
+#space {
+    width: 250px;
+}
+#ll {
+    width: 65px;
+}
+#ctrl {
+    width: 48px;
+}
+#inp {
+    width: 560px;
+    height: 200px;
 }
