@@ -3,10 +3,14 @@ body {
     text-align: center;
     min-width: 600px;
 }
+#num:hover {
+    background-color: darkgoldenrod;
+}
 #keyboard {
     text-align: center;
 }
 .num {
+    cursor: pointer;
     width: 35px;
     height: 35px;
     background-color: rgba(255, 255, 255, 0.89);
@@ -15,31 +19,37 @@ body {
     display: inline-flex;
     justify-content: space-evenly;
 }
-#backspace {
+.num:hover {
+    background-color: darkgoldenrod;
+}
+#Backspace {
     width: 90px;
 }
-#tab {
+#Tab {
     width: 60px;
 }
-#capslock {
+#CapsLock {
     width: 82px;
 }
-#enter {
+#Enter {
     width: 80px;
 }
-#shift {
+#Shift {
     width: 81px;
 }
-#space {
-    width: 250px;
+#\ {
+    width: 255px;
 }
-#ll {
+#\\ {
     width: 65px;
 }
-#ctrl {
-    width: 48px;
+#Ctrl {
+    width: 45px;
 }
 #inp {
     width: 560px;
     height: 200px;
+}
+#row {
+    display: inline-flex;
 }
