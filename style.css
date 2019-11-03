@@ -1,53 +1,65 @@
 body {
-    background-color: gold;
-    text-align: center;
+    background-color: rgba(0, 0, 0, 0.829);
     min-width: 600px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+span {
+    display: block;
+    padding-left: 5px;
 }
 #num:hover {
     background-color: darkgoldenrod;
 }
 #keyboard {
-    text-align: center;
+    width: 590px;
+    height: 200px;
 }
 .num {
+    margin: 1px;
     cursor: pointer;
     width: 35px;
     height: 35px;
-    background-color: rgba(255, 255, 255, 0.89);
-    border-radius: 5px;
-    border: 1px solid rgb(141, 135, 135);
-    display: inline-flex;
+    border-radius: 6px;
+    background-color: rgb(240, 245, 247);
+    border: 1px solid rgb(226, 223, 223);
     justify-content: space-evenly;
 }
 .num:hover {
-    background-color: darkgoldenrod;
+    background-color: rgb(203, 207, 207);
 }
 #Backspace {
-    width: 90px;
+    width: 95px;
 }
 #Tab {
-    width: 60px;
+    width: 65px;
 }
 #CapsLock {
-    width: 82px;
+    width: 89px;
 }
 #Enter {
     width: 80px;
 }
-#Shift {
-    width: 81px;
+#ShiftLeft {
+    width: 80px;
+} 
+#ShiftRight {
+    width: 89px;
 }
-#\ {
+#Space {
     width: 255px;
 }
-#\\ {
+#Backslash {
     width: 65px;
 }
-#Ctrl {
-    width: 45px;
+#ControlLeft, #ControlRight {
+    width: 49px;
+}
+#AltRight {
+    width: 42px;
 }
 #inp {
-    width: 560px;
+    width: 590px;
     height: 200px;
 }
 #row {
