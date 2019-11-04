@@ -16,6 +16,7 @@ span {
     height: 200px;
 }
 .num {
+    overflow: hidden;
     margin: 1px;
     cursor: pointer;
     width: 35px;
@@ -53,7 +54,7 @@ span {
     width: 65px;
 }
 #ControlLeft, #ControlRight {
-    width: 49px;
+    width: 48px;
 }
 #AltRight, #AltLeft{
     width: 40px;
@@ -70,7 +71,11 @@ span {
 }
 
 .up {
-    color: grey;
+    padding: 9px;
+    display: none;
+}
+.down {
+    padding: 9px;
 }
 .word {
     display: inline-flex;
@@ -94,3 +99,4 @@ span {
 #Alt {
     padding: 9px 6px;
 }
+

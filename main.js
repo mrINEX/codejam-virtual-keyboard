@@ -167,24 +167,26 @@ for(let i = 0; i < fifth.length; i++){
     divnum.append(span);
 }
 
-//lighting key in ketboard
+//lighting key in keyboard
 window.addEventListener("keydown", function(event) {
     let inp = this.document.getElementById(`${event.code}`);
     inp.style.background = "grey";
+    inp.style.borderRadius = "12px";
   }, true);
 
 window.addEventListener("keyup", function(event) {
     let inp = this.document.getElementById(`${event.code}`);
     inp.style.background = null;
+    inp.style.borderRadius = null;
   }, true);
 
 
 window.addEventListener( 'keydown', function( event ) {
     let cl = document.getElementById('CapsLock');
-    let up = document.getElementsByClassName('down');
+    let eu = document.getElementsByClassName('up');
     if(event.getModifierState( 'CapsLock' )){
-        for(let i = 0; i < up.length; i++){
-            up[i].style.display = 'none';
+        for(let i = 0; i < eu.length; i++){
+            eu[i].style.display = 'block';
         }
         cl.style.color = "blue";
     }else{
@@ -196,19 +198,19 @@ window.addEventListener( 'keydown', function( event ) {
 }, true);
 
 window.addEventListener( 'keydown', function( event ) {
-    let e = document.getElementsByClassName('down');
+    let eu = document.getElementsByClassName('up');
     if(event.shiftKey === true){
-        for(let i = 0; i < e.length; i++){
-            e[i].style.display = 'none';
+        for(let i = 0; i < eu.length; i++){
+            eu[i].style.display = "block";
         }
     } 
 }, true);
 
 window.addEventListener( 'keyup', function( event ) {
-    let e = document.getElementsByClassName('down');
+    let e = document.getElementsByClassName('up');
     if(event.shiftKey === false && !event.getModifierState('CapsLock')){
         for(let i = 0; i < e.length; i++){
-            e[i].style.display = null;
+            e[i].style.display = 'none';
         }
     } 
 }, true);
@@ -217,17 +219,61 @@ window.addEventListener( 'keyup', function( event ) {
 //click case
 window.addEventListener("click", function(event) {
     let textarea = this.document.getElementById("inp");
+
     if(event.target.parentNode.className === "num"){
+
+        event.target.parentNode.style.background = "grey";
+        event.target.parentNode.style.borderRadius = "12px";
+        this.setTimeout(function() {
+            event.target.parentNode.style.background = null;
+            event.target.parentNode.style.borderRadius = null;
+        }, 200);
+
         if(event.target.innerHTML === "Backspace"){
-            textarea.value = textarea.value.replace(/.$/, '');
+            textarea.value = textarea.value.replace(/.$|\n$/, '');
         } 
+        else if (event.target.id === " "){
+            textarea.value += " ";
+        }
+        else if (event.target.innerHTML === "Enter"){
+            console.log(textarea.value);
+            textarea.value += "\n";
+        }
+        else if (event.target.innerHTML === "CapsLock"){
+            
+            if(event.target.parentNode.style.color !== "blue"){
+                let eu = document.getElementsByClassName('up');
+                for(let i = 0; i < eu.length; i++){
+                    eu[i].style.display = 'block';
+                }
+                event.target.parentNode.style.color = "blue";
+            } else {
+                let eu = document.getElementsByClassName('up');
+                for(let i = 0; i < eu.length; i++){
+                    eu[i].style.display = null;
+                }
+                event.target.parentNode.style.color = null;
+            }
+        }
+        else if (event.target.innerHTML === "Shift"){
+            let eu = document.getElementsByClassName('up');
+            for(let i = 0; i < eu.length; i++){
+                eu[i].style.display = "block";
+            }
+            this.setTimeout(function() {
+                let e = document.getElementsByClassName('up');
+                    for(let i = 0; i < e.length; i++){
+                        e[i].style.display = 'none';
+                    }
+            }, 300);
+        }
         else if(event.target.className === "word"){
             //console.log(event.target.className);
         }
         else {
             textarea.value += event.target.innerHTML;
         }
-    //console.log(event.target.parentNode, event.target.parentNode.className, event.target.innerHTML);//event.target.parentNode.id);
+    console.log(event.target.parentNode, event.target.parentNode.className, event.target.innerHTML);//event.target.parentNode.id);
     }
-    console.log(textarea.value);
+
 }, true);
