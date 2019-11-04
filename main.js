@@ -10,15 +10,18 @@ let row3 = ["CapsLock", "KeyA", "KeyS", "KeyD", "KeyF", "KeyG", "KeyH", "KeyJ", 
 let row4 = ["ShiftLeft", "KeyZ", "KeyX", "KeyC", "KeyV", "KeyB", "KeyN", "KeyM", "Comma", "Period", "Slash", "ArrowUp", "ShiftRight"];
 let row5 = ["ControlLeft", "MetaLeft", "AltLeft", "Space", "AltRight", "ArrowLeft", "ArrowDown", "ArrowRight", "ControlRight"];
 
+let once = document.createElement("div");
+once.id = "wrapper";
+document.body.appendChild(once);
 //draw input
 let inp = document.createElement("textarea");
 inp.id = "inp";
-document.body.appendChild(inp); 
+once.append(inp); 
 
 // draw keyboard
 let main = document.createElement("main");
 main.id = "keyboard";
-document.body.appendChild(main);
+once.append(main);
 
 // draw 1r
 let div = document.createElement("div");
@@ -236,11 +239,11 @@ window.addEventListener("click", function(event) {
             textarea.value += " ";
         }
         else if (event.target.innerHTML === "Enter"){
-            console.log(textarea.value);
+            //console.log(textarea.value);
             textarea.value += "\n";
         }
         else if (event.target.innerHTML === "CapsLock"){
-            
+
             if(event.target.parentNode.style.color !== "blue"){
                 let eu = document.getElementsByClassName('up');
                 for(let i = 0; i < eu.length; i++){
@@ -273,7 +276,24 @@ window.addEventListener("click", function(event) {
         else {
             textarea.value += event.target.innerHTML;
         }
-    console.log(event.target.parentNode, event.target.parentNode.className, event.target.innerHTML);//event.target.parentNode.id);
+    //console.log(event.target.parentNode, event.target.parentNode.className, event.target.innerHTML);//event.target.parentNode.id);
+    }
+
+
+
+
+    console.log(localStorage, sessionStorage);
+    //ru case --------------------------------------------------------
+    let ru1 = [["ё","Ё"], ["1","!"], ["2",'"'], ["3",'№'], ["4",";"], ["5","%"], ["6",":"], ["7","?"], ["8","*"], ["9","("], ["0",")"], ["-","_"], ["=","+"], ["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"],["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"],["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
+    //let ru2 = [["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"]];
+    //let ru3 = [["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"]];
+    //let ru4 = [["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
+    let upe = this.document.getElementsByClassName('up');
+    let downe = this.document.getElementsByClassName('down');
+    console.log(upe[0], downe[0]);
+    for(let i = 0; i < upe.length; i++){
+        upe[i].innerHTML = `${ru1[i][0]}`;
+        downe[i].innerHTML = `${ru1[i][1]}`
     }
 
 }, true);
