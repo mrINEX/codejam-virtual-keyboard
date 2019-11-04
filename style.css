@@ -41,10 +41,10 @@ span {
     width: 80px;
 }
 #ShiftLeft {
-    width: 80px;
+    width: 85px;
 } 
 #ShiftRight {
-    width: 89px;
+    width: 85px;
 }
 #Space {
     width: 255px;
@@ -55,13 +55,42 @@ span {
 #ControlLeft, #ControlRight {
     width: 49px;
 }
-#AltRight {
-    width: 42px;
+#AltRight, #AltLeft{
+    width: 40px;
 }
 #inp {
-    width: 590px;
-    height: 200px;
+    width: 600px;
+    height: 150px;
 }
 #row {
     display: inline-flex;
+}
+#Shift {
+    padding: 9px 19px;
+}
+
+.up {
+    color: grey;
+}
+.word {
+    display: inline-flex;
+    padding: 9px 0 8px 0px;
+}
+#ArrowLeft, #ArrowDown, #ArrowRight, #ArrowUp {
+    font-size: 10px;
+}
+#\ {
+    padding: 18px 128px;
+}
+#lt, #dn, #rt, #up {
+    padding: 12px;
+}
+#Ctrl {
+    padding: 9px 6px;
+}
+#Win {
+    padding: 9px 3px;
+}
+#Alt {
+    padding: 9px 6px;
 }
