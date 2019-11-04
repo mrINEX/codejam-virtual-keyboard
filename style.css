@@ -37,7 +37,7 @@ span {
     justify-content: space-evenly;
 }
 .num:hover {
-    background-color: rgb(203, 207, 207);
+    background-color: rgb(167, 166, 161);
 }
 #Backspace {
     width: 95px;

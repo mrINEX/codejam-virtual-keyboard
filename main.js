@@ -178,8 +178,8 @@ let u = this.document.getElementsByClassName('up');
 let d = this.document.getElementsByClassName('down');
 if(localStorage.getItem('leng') === 'ru'){
     for(let i = 0; i < u.length; i++){
-        u[i].innerHTML = `${ru1[i][0]}`;
-        d[i].innerHTML = `${ru1[i][1]}`;
+        u[i].innerHTML = `${ru1[i][1]}`;
+        d[i].innerHTML = `${ru1[i][0]}`;
     }
 } else {
     for(let i = 0; i < u.length; i++){
@@ -303,9 +303,6 @@ window.addEventListener("click", function(event) {
 
 
 //ru case en case --------------------------------------------------------
-// en = 1  ru = 2
-
-
 //let ru2 = [["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"]];
 //let ru3 = [["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"]];
 //let ru4 = [["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
@@ -332,8 +329,8 @@ window.addEventListener( 'keydown', function( event ) {
         window.addEventListener( 'keydown', function( event ) {
             if(event.altKey && localStorage.getItem('leng') === "en"){
                 for(let i = 0; i < upe.length; i++){
-                    upe[i].innerHTML = `${ru1[i][0]}`;
-                    downe[i].innerHTML = `${ru1[i][1]}`;
+                    upe[i].innerHTML = `${ru1[i][1]}`;
+                    downe[i].innerHTML = `${ru1[i][0]}`;
                 }
             }
         }, true);
@@ -343,18 +340,18 @@ window.addEventListener( 'keydown', function( event ) {
 
 window.addEventListener("keyup", function( event ) {
     let upe = this.document.getElementsByClassName('up');
-    console.log(event.key);
+    //console.log(event.key);
     if(event.key === 'Alt'){
         if(upe[0].innerHTML === "~"){
             localStorage.clear();
             localStorage.setItem('leng', "en");
         }
-        console.log(upe[0].innerHTML, upe[0].innerHTML === "~", localStorage);
-        if(upe[0].innerHTML === "ё"){
+        //console.log(upe[0].innerHTML, upe[0].innerHTML === "~", localStorage);
+        if(upe[0].innerHTML === "Ё"){
             localStorage.clear();
             localStorage.setItem('leng', "ru");
         }
-        console.log(upe[0].innerHTML ,upe[0].innerHTML === "ё", localStorage);
+        //console.log(upe[0].innerHTML ,upe[0].innerHTML === "ё", localStorage);
     }
 }, true);
 
