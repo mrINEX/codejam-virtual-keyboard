@@ -4,6 +4,9 @@ let third = [['CapsLock'],['A','a'],['S','s'],['D','d'],['F','f'],['G','g'],['H'
 let fourth = [['Shift'],['Z','z'],['X','x'],['C','c'],['V','v'],['B','b'],['N','n'],['M','m'],['<',','],['>','.'],['?','/'],[`up`],['Shift']];
 let fifth = ['Ctrl','Win','Alt'," ",'Alt','lt','dn','rt','Ctrl'];
 
+let ru1 = [["ё","Ё"], ["1","!"], ["2",'"'], ["3",'№'], ["4",";"], ["5","%"], ["6",":"], ["7","?"], ["8","*"], ["9","("], ["0",")"], ["-","_"], ["=","+"], ["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"],["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"],["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
+let en1 = [['~', '`'],["!", '1'],['@','2'],['#','3'],['$','4'],['%','5'],['^','6'],['&','7'],['*','8'],['(','9'],[')','0'],['_','-'],['+','='],['Q', 'q'],['W', 'w'],['E', 'e'],['R', 'r'],['T', 't'],['Y', 'y'],['U', 'u'],['I', 'i'],['O', 'o'],['P', 'p'],['{', '['],['}', ']'],['|', '\\'],['A','a'],['S','s'],['D','d'],['F','f'],['G','g'],['H','h'],['J','j'],['K','k'],['L','l'],[':',';'],['"',"'"],['Z','z'],['X','x'],['C','c'],['V','v'],['B','b'],['N','n'],['M','m'],['<',','],['>','.'],['?','/']];
+
 let row1 = ["Backquote", "Digit1", "Digit2", "Digit3", "Digit4","Digit5","Digit6","Digit7","Digit8","Digit9","Digit0", "Minus", "Equal", "Backspace"];
 let row2 = ["Tab", "KeyQ", "KeyW", "KeyE", "KeyR", "KeyT", "KeyY", "KeyU", "KeyI", "KeyO", "KeyP", "BracketLeft", "BracketRight", "Backslash"];
 let row3 = ["CapsLock", "KeyA", "KeyS", "KeyD", "KeyF", "KeyG", "KeyH", "KeyJ", "KeyK", "KeyL", "Semicolon", "Quote", "Enter"];
@@ -170,6 +173,23 @@ for(let i = 0; i < fifth.length; i++){
     divnum.append(span);
 }
 
+//localstorage ------------------------------------------
+let u = this.document.getElementsByClassName('up');
+let d = this.document.getElementsByClassName('down');
+if(localStorage.getItem('leng') === 'ru'){
+    for(let i = 0; i < u.length; i++){
+        u[i].innerHTML = `${ru1[i][0]}`;
+        d[i].innerHTML = `${ru1[i][1]}`;
+    }
+} else {
+    for(let i = 0; i < u.length; i++){
+        u[i].innerHTML = `${en1[i][0]}`;
+        d[i].innerHTML = `${en1[i][1]}`;
+    }
+}
+
+
+
 //lighting key in keyboard
 window.addEventListener("keydown", function(event) {
     let inp = this.document.getElementById(`${event.code}`);
@@ -278,22 +298,68 @@ window.addEventListener("click", function(event) {
         }
     //console.log(event.target.parentNode, event.target.parentNode.className, event.target.innerHTML);//event.target.parentNode.id);
     }
-
-
-
-
-    console.log(localStorage, sessionStorage);
-    //ru case --------------------------------------------------------
-    let ru1 = [["ё","Ё"], ["1","!"], ["2",'"'], ["3",'№'], ["4",";"], ["5","%"], ["6",":"], ["7","?"], ["8","*"], ["9","("], ["0",")"], ["-","_"], ["=","+"], ["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"],["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"],["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
-    //let ru2 = [["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"]];
-    //let ru3 = [["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"]];
-    //let ru4 = [["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
-    let upe = this.document.getElementsByClassName('up');
-    let downe = this.document.getElementsByClassName('down');
-    console.log(upe[0], downe[0]);
-    for(let i = 0; i < upe.length; i++){
-        upe[i].innerHTML = `${ru1[i][0]}`;
-        downe[i].innerHTML = `${ru1[i][1]}`
-    }
-
 }, true);
+
+
+
+//ru case en case --------------------------------------------------------
+// en = 1  ru = 2
+
+
+//let ru2 = [["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"]];
+//let ru3 = [["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"]];
+//let ru4 = [["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
+let upe = this.document.getElementsByClassName('up');
+let downe = this.document.getElementsByClassName('down');
+
+//one
+window.addEventListener( 'keydown', function( event ) {
+    if(event.repeat && event.shiftKey){
+        window.addEventListener( 'keydown', function( event ) {
+            if(event.altKey && localStorage.getItem('leng') === 'ru'){
+                for(let i = 0; i < upe.length; i++){
+                    upe[i].innerHTML = `${en1[i][0]}`;
+                    downe[i].innerHTML = `${en1[i][1]}`;
+                }
+            }
+        }, true);
+    }
+}, true);
+
+//two
+window.addEventListener( 'keydown', function( event ) {
+    if(event.repeat && event.shiftKey){
+        window.addEventListener( 'keydown', function( event ) {
+            if(event.altKey && localStorage.getItem('leng') === "en"){
+                for(let i = 0; i < upe.length; i++){
+                    upe[i].innerHTML = `${ru1[i][0]}`;
+                    downe[i].innerHTML = `${ru1[i][1]}`;
+                }
+            }
+        }, true);
+    }
+}, true);
+
+
+window.addEventListener("keyup", function( event ) {
+    let upe = this.document.getElementsByClassName('up');
+    console.log(event.key);
+    if(event.key === 'Alt'){
+        if(upe[0].innerHTML === "~"){
+            localStorage.clear();
+            localStorage.setItem('leng', "en");
+        }
+        console.log(upe[0].innerHTML, upe[0].innerHTML === "~", localStorage);
+        if(upe[0].innerHTML === "ё"){
+            localStorage.clear();
+            localStorage.setItem('leng', "ru");
+        }
+        console.log(upe[0].innerHTML ,upe[0].innerHTML === "ё", localStorage);
+    }
+}, true);
+
+//localStorage.getItem('leng') === 'ru'
+//localStorage.getItem('leng') === "en"
+//localStorage.setItem('leng', "en");
+//localStorage.clear();
+//localStorage.setItem('leng', "ru");
