@@ -174,7 +174,6 @@ for(let i = 0; i < fifth.length; i++){
 }
 
 //localstorage ------------------------------------------
-console.log('localstorage ----------------------------------------');
 let u = this.document.getElementsByClassName('up');
 let d = this.document.getElementsByClassName('down');
 if(localStorage.getItem('leng') === 'ru'){
@@ -263,6 +262,10 @@ window.addEventListener("click", function(event) {
             //console.log(textarea.value);
             textarea.value += "\n";
         }
+        else if (event.target.innerHTML === "Tab"){
+            //console.log(textarea.value);
+            textarea.value += "  ";
+        }
         else if (event.target.innerHTML === "CapsLock"){
 
             if(event.target.parentNode.style.color !== "blue"){
@@ -312,7 +315,6 @@ let downe = this.document.getElementsByClassName('down');
 
 //one
 window.addEventListener( 'keydown', function( event ) {
-    console.log('one -------');
     if(event.repeat && event.shiftKey){
         window.addEventListener( 'keydown', function( event ) {
             if(event.shiftKey && event.altKey && upe[0].innerHTML === "Ё" && localStorage.getItem('leng') === 'ru'){
@@ -321,41 +323,50 @@ window.addEventListener( 'keydown', function( event ) {
                     downe[i].innerHTML = `${en1[i][1]}`;
                 }
             }
-
-        }, true);
-    }
-}, true);
-
-//console.log('en --->');
-
-//two 
-window.addEventListener( 'keydown', function( event ) {
-    console.log('two -------');
-    if(event.repeat && event.shiftKey){
-        window.addEventListener( 'keydown', function( event ) {
             if(event.shiftKey && event.altKey && upe[0].innerHTML === "~" && localStorage.getItem('leng') === "en"){
                 for(let i = 0; i < upe.length; i++){
                     upe[i].innerHTML = `${ru1[i][1]}`;
                     downe[i].innerHTML = `${ru1[i][0]}`;
                 }
             }
+
+        }, true);
+    }
+}, true);
+
+//two 
+window.addEventListener( 'keydown', function( event ) {
+    if(event.repeat && event.altKey){
+        window.addEventListener( 'keydown', function( event ) {
+            if(event.shiftKey && event.altKey && upe[0].innerHTML === "Ё" && localStorage.getItem('leng') === 'ru'){
+                for(let i = 0; i < upe.length; i++){
+                    upe[i].innerHTML = `${en1[i][0]}`;
+                    downe[i].innerHTML = `${en1[i][1]}`;
+                }
+            }
+            if(event.shiftKey && event.altKey && upe[0].innerHTML === "~" && localStorage.getItem('leng') === "en"){
+                for(let i = 0; i < upe.length; i++){
+                    upe[i].innerHTML = `${ru1[i][1]}`;
+                    downe[i].innerHTML = `${ru1[i][0]}`;
+                }
+            }
+
         }, true);
     }
 }, true);
 
 
+
+
 //localstorage------------------------------------------------
-
-
 window.addEventListener("keyup", function( event ) { 
 
-    if(event.key === 'Alt'){
+    if(event.key === 'Alt' || event.key === 'Shift'){ // issue this
         let upe = this.document.getElementsByClassName('up');
 
         if(upe[0].innerHTML === "~"){
             localStorage.setItem('leng', "en");
         }
-
         if(upe[0].innerHTML === "Ё"){
             localStorage.setItem('leng', "ru");
         }

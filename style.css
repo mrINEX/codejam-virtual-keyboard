@@ -41,15 +41,19 @@ span {
 }
 #Backspace {
     width: 95px;
+    justify-content: space-evenly;
 }
 #Tab {
     width: 65px;
+    justify-content: space-evenly;
 }
 #CapsLock {
     width: 89px;
+    justify-content: space-evenly;
 }
 #Enter {
     width: 80px;
+    justify-content: space-evenly;
 }
 #ShiftLeft {
     width: 85px;
