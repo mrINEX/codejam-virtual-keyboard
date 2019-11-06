@@ -213,9 +213,10 @@ window.addEventListener( 'keydown', function( event ) {
         }
         cl.style.color = "blue";
     }else{
-        for(let i = 0; i < up.length; i++){
-            up[i].style.display = null;
-        }
+        //for(let i = 0; i < eu.length; i++){
+        //    console.log('2', up.length);
+        //    up[i].style.display = null;
+        //}
         cl.style.color = null;
     }
 }, true);
