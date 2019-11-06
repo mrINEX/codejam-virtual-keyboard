@@ -243,6 +243,7 @@ window.addEventListener( 'keyup', function( event ) {
 //click case
 window.addEventListener("click", function(event) {
     let textarea = this.document.getElementById("inp");
+    let cl = document.getElementById('CapsLock'); //newwwwwwwwwww
 
     if(event.target.parentNode.className === "num"){
 
@@ -283,7 +284,7 @@ window.addEventListener("click", function(event) {
                 event.target.parentNode.style.color = null;
             }
         }
-        else if (event.target.innerHTML === "Shift"){
+        else if (event.target.innerHTML === "Shift" && cl.style.color !== "blue"){
             let eu = document.getElementsByClassName('up');
             for(let i = 0; i < eu.length; i++){
                 eu[i].style.display = "block";
@@ -293,7 +294,7 @@ window.addEventListener("click", function(event) {
                     for(let i = 0; i < e.length; i++){
                         e[i].style.display = 'none';
                     }
-            }, 300);
+            }, 100);
         }
         else if(event.target.className === "word"){
             //console.log(event.target.className);
