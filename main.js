@@ -1,17 +1,17 @@
-let firstrow = [['~', '`'],["!", '1'],['@','2'],['#','3'],['$','4'],['%','5'],['^','6'],['&','7'],['*','8'],['(','9'],[')','0'],['_','-'],['+','='],'Backspace'];
-let secondrow = [['Tab'],['Q', 'q'],['W', 'w'],['E', 'e'],['R', 'r'],['T', 't'],['Y', 'y'],['U', 'u'],['I', 'i'],['O', 'o'],['P', 'p'],['{', '['],['}', ']'],['|', '\\']];
-let third = [['CapsLock'],['A','a'],['S','s'],['D','d'],['F','f'],['G','g'],['H','h'],['J','j'],['K','k'],['L','l'],[':',';'],['"',"'"],['Enter']];
-let fourth = [['Shift'],['Z','z'],['X','x'],['C','c'],['V','v'],['B','b'],['N','n'],['M','m'],['<',','],['>','.'],['?','/'],[`up`],['Shift']];
-let fifth = ['Ctrl','Win','Alt'," ",'Alt','lt','dn','rt','Ctrl'];
+const firstrow = [['~', '`'],["!", '1'],['@','2'],['#','3'],['$','4'],['%','5'],['^','6'],['&','7'],['*','8'],['(','9'],[')','0'],['_','-'],['+','='],'Backspace'];
+const secondrow = [['Tab'],['Q', 'q'],['W', 'w'],['E', 'e'],['R', 'r'],['T', 't'],['Y', 'y'],['U', 'u'],['I', 'i'],['O', 'o'],['P', 'p'],['{', '['],['}', ']'],['|', '\\']];
+const third = [['CapsLock'],['A','a'],['S','s'],['D','d'],['F','f'],['G','g'],['H','h'],['J','j'],['K','k'],['L','l'],[':',';'],['"',"'"],['Enter']];
+const fourth = [['Shift'],['Z','z'],['X','x'],['C','c'],['V','v'],['B','b'],['N','n'],['M','m'],['<',','],['>','.'],['?','/'],[`up`],['Shift']];
+const fifth = ['Ctrl','Win','Alt'," ",'Alt','lt','dn','rt','Ctrl'];
 
-let ru1 = [["ё","Ё"], ["1","!"], ["2",'"'], ["3",'№'], ["4",";"], ["5","%"], ["6",":"], ["7","?"], ["8","*"], ["9","("], ["0",")"], ["-","_"], ["=","+"], ["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"],["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"],["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
-let en1 = [['~', '`'],["!", '1'],['@','2'],['#','3'],['$','4'],['%','5'],['^','6'],['&','7'],['*','8'],['(','9'],[')','0'],['_','-'],['+','='],['Q', 'q'],['W', 'w'],['E', 'e'],['R', 'r'],['T', 't'],['Y', 'y'],['U', 'u'],['I', 'i'],['O', 'o'],['P', 'p'],['{', '['],['}', ']'],['|', '\\'],['A','a'],['S','s'],['D','d'],['F','f'],['G','g'],['H','h'],['J','j'],['K','k'],['L','l'],[':',';'],['"',"'"],['Z','z'],['X','x'],['C','c'],['V','v'],['B','b'],['N','n'],['M','m'],['<',','],['>','.'],['?','/']];
+const ru1 = [["ё","Ё"], ["1","!"], ["2",'"'], ["3",'№'], ["4",";"], ["5","%"], ["6",":"], ["7","?"], ["8","*"], ["9","("], ["0",")"], ["-","_"], ["=","+"], ["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"],["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"],["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
+const en1 = [['~', '`'],["!", '1'],['@','2'],['#','3'],['$','4'],['%','5'],['^','6'],['&','7'],['*','8'],['(','9'],[')','0'],['_','-'],['+','='],['Q', 'q'],['W', 'w'],['E', 'e'],['R', 'r'],['T', 't'],['Y', 'y'],['U', 'u'],['I', 'i'],['O', 'o'],['P', 'p'],['{', '['],['}', ']'],['|', '\\'],['A','a'],['S','s'],['D','d'],['F','f'],['G','g'],['H','h'],['J','j'],['K','k'],['L','l'],[':',';'],['"',"'"],['Z','z'],['X','x'],['C','c'],['V','v'],['B','b'],['N','n'],['M','m'],['<',','],['>','.'],['?','/']];
 
-let row1 = ["Backquote", "Digit1", "Digit2", "Digit3", "Digit4","Digit5","Digit6","Digit7","Digit8","Digit9","Digit0", "Minus", "Equal", "Backspace"];
-let row2 = ["Tab", "KeyQ", "KeyW", "KeyE", "KeyR", "KeyT", "KeyY", "KeyU", "KeyI", "KeyO", "KeyP", "BracketLeft", "BracketRight", "Backslash"];
-let row3 = ["CapsLock", "KeyA", "KeyS", "KeyD", "KeyF", "KeyG", "KeyH", "KeyJ", "KeyK", "KeyL", "Semicolon", "Quote", "Enter"];
-let row4 = ["ShiftLeft", "KeyZ", "KeyX", "KeyC", "KeyV", "KeyB", "KeyN", "KeyM", "Comma", "Period", "Slash", "ArrowUp", "ShiftRight"];
-let row5 = ["ControlLeft", "MetaLeft", "AltLeft", "Space", "AltRight", "ArrowLeft", "ArrowDown", "ArrowRight", "ControlRight"];
+const row1 = ["Backquote", "Digit1", "Digit2", "Digit3", "Digit4","Digit5","Digit6","Digit7","Digit8","Digit9","Digit0", "Minus", "Equal", "Backspace"];
+const row2 = ["Tab", "KeyQ", "KeyW", "KeyE", "KeyR", "KeyT", "KeyY", "KeyU", "KeyI", "KeyO", "KeyP", "BracketLeft", "BracketRight", "Backslash"];
+const row3 = ["CapsLock", "KeyA", "KeyS", "KeyD", "KeyF", "KeyG", "KeyH", "KeyJ", "KeyK", "KeyL", "Semicolon", "Quote", "Enter"];
+const row4 = ["ShiftLeft", "KeyZ", "KeyX", "KeyC", "KeyV", "KeyB", "KeyN", "KeyM", "Comma", "Period", "Slash", "ArrowUp", "ShiftRight"];
+const row5 = ["ControlLeft", "MetaLeft", "AltLeft", "Space", "AltRight", "ArrowLeft", "ArrowDown", "ArrowRight", "ControlRight"];
 
 let once = document.createElement("div");
 once.id = "wrapper";
@@ -155,7 +155,6 @@ for(let i = 0; i < fourth.length; i++){
     }
 }
 
-
 //draw 5r
 let divvvvv = document.createElement("div");
 divvvvv.id = 'row';
@@ -188,8 +187,6 @@ if(localStorage.getItem('leng') === 'ru'){
     }
 }
 
-
-
 //lighting key in keyboard
 window.addEventListener("keydown", function(event) {
     let inp = this.document.getElementById(`${event.code}`);
@@ -213,10 +210,6 @@ window.addEventListener( 'keydown', function( event ) {
         }
         cl.style.color = "blue";
     }else{
-        //for(let i = 0; i < eu.length; i++){
-        //    console.log('2', up.length);
-        //    up[i].style.display = null;
-        //}
         cl.style.color = null;
     }
 }, true);
@@ -243,17 +236,15 @@ window.addEventListener( 'keyup', function( event ) {
 //click case
 window.addEventListener("click", function(event) {
     let textarea = this.document.getElementById("inp");
-    let cl = document.getElementById('CapsLock'); //newwwwwwwwwww
+    let cl = document.getElementById('CapsLock');
 
     if(event.target.parentNode.className === "num"){
-
         event.target.parentNode.style.background = "grey";
         event.target.parentNode.style.borderRadius = "12px";
         this.setTimeout(function() {
             event.target.parentNode.style.background = null;
             event.target.parentNode.style.borderRadius = null;
         }, 200);
-
         if(event.target.innerHTML === "Backspace"){
             textarea.value = textarea.value.replace(/.$|\n$/, '');
         } 
@@ -261,11 +252,9 @@ window.addEventListener("click", function(event) {
             textarea.value += " ";
         }
         else if (event.target.innerHTML === "Enter"){
-            //console.log(textarea.value);
             textarea.value += "\n";
         }
         else if (event.target.innerHTML === "Tab"){
-            //console.log(textarea.value);
             textarea.value += "  ";
         }
         else if (event.target.innerHTML === "CapsLock"){
@@ -302,16 +291,12 @@ window.addEventListener("click", function(event) {
         else {
             textarea.value += event.target.innerHTML;
         }
-    //console.log(event.target.parentNode, event.target.parentNode.className, event.target.innerHTML);//event.target.parentNode.id);
     }
 }, true);
 
 
 
-//ru case en case --------------------------------------------------------
-//let ru2 = [["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"]];
-//let ru3 = [["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"]];
-//let ru4 = [["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
+//ru case en case
 let upe = this.document.getElementsByClassName('up');
 let downe = this.document.getElementsByClassName('down');
 
@@ -357,13 +342,10 @@ window.addEventListener( 'keydown', function( event ) {
     }
 }, true);
 
-
-
-
 //localstorage------------------------------------------------
 window.addEventListener("keyup", function( event ) { 
 
-    if(event.key === 'Alt' || event.key === 'Shift'){ // issue this
+    if(event.key === 'Alt' || event.key === 'Shift'){ 
         let upe = this.document.getElementsByClassName('up');
 
         if(upe[0].innerHTML === "~"){
@@ -374,10 +356,3 @@ window.addEventListener("keyup", function( event ) {
         }
     }
 }, );
-
-
-//localStorage.getItem('leng') === 'ru'
-//localStorage.getItem('leng') === "en"
-//localStorage.setItem('leng', "en");
-//localStorage.clear();
-//localStorage.setItem('leng', "ru");
