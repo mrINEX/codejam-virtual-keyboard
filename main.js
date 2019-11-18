@@ -1,177 +1,74 @@
-let firstrow = [['~', '`'],["!", '1'],['@','2'],['#','3'],['$','4'],['%','5'],['^','6'],['&','7'],['*','8'],['(','9'],[')','0'],['_','-'],['+','='],'Backspace'];
-let secondrow = [['Tab'],['Q', 'q'],['W', 'w'],['E', 'e'],['R', 'r'],['T', 't'],['Y', 'y'],['U', 'u'],['I', 'i'],['O', 'o'],['P', 'p'],['{', '['],['}', ']'],['|', '\\']];
-let third = [['CapsLock'],['A','a'],['S','s'],['D','d'],['F','f'],['G','g'],['H','h'],['J','j'],['K','k'],['L','l'],[':',';'],['"',"'"],['Enter']];
-let fourth = [['Shift'],['Z','z'],['X','x'],['C','c'],['V','v'],['B','b'],['N','n'],['M','m'],['<',','],['>','.'],['?','/'],[`up`],['Shift']];
-let fifth = ['Ctrl','Win','Alt'," ",'Alt','lt','dn','rt','Ctrl'];
+const first = [['~', '`'],["!", '1'],['@','2'],['#','3'],['$','4'],['%','5'],['^','6'],['&','7'],['*','8'],['(','9'],[')','0'],['_','-'],['+','='],'Backspace'];
+const second = [['Tab'],['Q', 'q'],['W', 'w'],['E', 'e'],['R', 'r'],['T', 't'],['Y', 'y'],['U', 'u'],['I', 'i'],['O', 'o'],['P', 'p'],['{', '['],['}', ']'],['|', '\\']];
+const third = [['CapsLock'],['A','a'],['S','s'],['D','d'],['F','f'],['G','g'],['H','h'],['J','j'],['K','k'],['L','l'],[':',';'],['"',"'"],['Enter']];
+const fourth = [['Shift'],['Z','z'],['X','x'],['C','c'],['V','v'],['B','b'],['N','n'],['M','m'],['<',','],['>','.'],['?','/'],['up'],['Shift']];
+const fifth = ['Ctrl','Win','Alt'," ",'Alt','lt','dn','rt','Ctrl'];
 
-let ru1 = [["ё","Ё"], ["1","!"], ["2",'"'], ["3",'№'], ["4",";"], ["5","%"], ["6",":"], ["7","?"], ["8","*"], ["9","("], ["0",")"], ["-","_"], ["=","+"], ["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"],["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"],["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
-let en1 = [['~', '`'],["!", '1'],['@','2'],['#','3'],['$','4'],['%','5'],['^','6'],['&','7'],['*','8'],['(','9'],[')','0'],['_','-'],['+','='],['Q', 'q'],['W', 'w'],['E', 'e'],['R', 'r'],['T', 't'],['Y', 'y'],['U', 'u'],['I', 'i'],['O', 'o'],['P', 'p'],['{', '['],['}', ']'],['|', '\\'],['A','a'],['S','s'],['D','d'],['F','f'],['G','g'],['H','h'],['J','j'],['K','k'],['L','l'],[':',';'],['"',"'"],['Z','z'],['X','x'],['C','c'],['V','v'],['B','b'],['N','n'],['M','m'],['<',','],['>','.'],['?','/']];
+const ru1 = [["ё","Ё"], ["1","!"], ["2",'"'], ["3",'№'], ["4",";"], ["5","%"], ["6",":"], ["7","?"], ["8","*"], ["9","("], ["0",")"], ["-","_"], ["=","+"], ["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"],["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"],["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
+const en1 = [['~', '`'],["!", '1'],['@','2'],['#','3'],['$','4'],['%','5'],['^','6'],['&','7'],['*','8'],['(','9'],[')','0'],['_','-'],['+','='],['Q', 'q'],['W', 'w'],['E', 'e'],['R', 'r'],['T', 't'],['Y', 'y'],['U', 'u'],['I', 'i'],['O', 'o'],['P', 'p'],['{', '['],['}', ']'],['|', '\\'],['A','a'],['S','s'],['D','d'],['F','f'],['G','g'],['H','h'],['J','j'],['K','k'],['L','l'],[':',';'],['"',"'"],['Z','z'],['X','x'],['C','c'],['V','v'],['B','b'],['N','n'],['M','m'],['<',','],['>','.'],['?','/']];
 
-let row1 = ["Backquote", "Digit1", "Digit2", "Digit3", "Digit4","Digit5","Digit6","Digit7","Digit8","Digit9","Digit0", "Minus", "Equal", "Backspace"];
-let row2 = ["Tab", "KeyQ", "KeyW", "KeyE", "KeyR", "KeyT", "KeyY", "KeyU", "KeyI", "KeyO", "KeyP", "BracketLeft", "BracketRight", "Backslash"];
-let row3 = ["CapsLock", "KeyA", "KeyS", "KeyD", "KeyF", "KeyG", "KeyH", "KeyJ", "KeyK", "KeyL", "Semicolon", "Quote", "Enter"];
-let row4 = ["ShiftLeft", "KeyZ", "KeyX", "KeyC", "KeyV", "KeyB", "KeyN", "KeyM", "Comma", "Period", "Slash", "ArrowUp", "ShiftRight"];
-let row5 = ["ControlLeft", "MetaLeft", "AltLeft", "Space", "AltRight", "ArrowLeft", "ArrowDown", "ArrowRight", "ControlRight"];
+const row1 = ["Backquote", "Digit1", "Digit2", "Digit3", "Digit4","Digit5","Digit6","Digit7","Digit8","Digit9","Digit0", "Minus", "Equal", "Backspace"];
+const row2 = ["Tab", "KeyQ", "KeyW", "KeyE", "KeyR", "KeyT", "KeyY", "KeyU", "KeyI", "KeyO", "KeyP", "BracketLeft", "BracketRight", "Backslash"];
+const row3 = ["CapsLock", "KeyA", "KeyS", "KeyD", "KeyF", "KeyG", "KeyH", "KeyJ", "KeyK", "KeyL", "Semicolon", "Quote", "Enter"];
+const row4 = ["ShiftLeft", "KeyZ", "KeyX", "KeyC", "KeyV", "KeyB", "KeyN", "KeyM", "Comma", "Period", "Slash", "ArrowUp", "ShiftRight"];
+const row5 = ["ControlLeft", "MetaLeft", "AltLeft", "Space", "AltRight", "ArrowLeft", "ArrowDown", "ArrowRight", "ControlRight"];
 
-let once = document.createElement("div");
-once.id = "wrapper";
-document.body.appendChild(once);
-//draw input
-let inp = document.createElement("textarea");
-inp.id = "inp";
-once.append(inp); 
-
-// draw keyboard
-let main = document.createElement("main");
-main.id = "keyboard";
-once.append(main);
-
+function create(elem, clname){
+    let n = document.createElement(elem);
+    n.classList.add(clname);
+    return n;
+};
+let wr = document.body.appendChild(create("div", "wrapper"));
+wr.append(create("textarea", "input"));
+let main = create("main", "keyboard");
+wr.append(main);
 // draw 1r
-let div = document.createElement("div");
-div.id = 'row';
-main.append(div);
+let divrowfirst = create("div", "row");
+main.append(divrowfirst);
+drawbutt(row1, first, divrowfirst);
+// draw 2r
+let divrowsecond = create("div", "row");
+main.append(divrowsecond);
+drawbutt(row2, second, divrowsecond);
+// draw 3r
+let divrowthird = create("div", "row");
+main.append(divrowthird);
+drawbutt(row3, third, divrowthird);
+// draw 4r
+let divrowfourth = create("div", "row");
+main.append(divrowfourth);
+drawbutt(row4, fourth, divrowfourth);
+// draw 5r
+let divrowfifth = create("div", "row");
+main.append(divrowfifth);
+drawbutt(row5, fifth, divrowfifth);
 
-for(let i = 0; i < firstrow.length; i++){
-    let divnum = document.createElement("div");
-    divnum.className = "num";
-    divnum.id = `${row1[i]}`;
-    div.append(divnum);
-
-    if(row1[i]==="Backspace"){
-        let span = document.createElement("span");
-        span.id = `${firstrow[i]}`;
-        span.className = "word";
-        span.innerHTML = firstrow[i];
-        divnum.append(span);
-    }
-    else {
-        for(let j = 0; j < firstrow[i].length; j++){
-            let span = document.createElement("span");
+function drawbutt(row, position, attach){
+  for(let i = 0; i < position.length; i++){
+    let dbutt = create("div", "button");
+    dbutt.classList.add(`${row[i]}`);
+    attach.append(dbutt);
+    if(row[i] === "Backspace" || row[i] === "Tab" || row[i]==='CapsLock' || row[i]==='Enter' || row[i]==='ShiftLeft' || row[i]==='ShiftRight' || row[i]==="ArrowUp" || row[i]==="ControlLeft" || row[i]==="MetaLeft" || row[i]==="AltLeft" || row[i]==="Space" || row[i]==="AltRight" || row[i]==="ArrowLeft" || row[i]==="ArrowDown" || row[i]==="ArrowRight" || row[i]==="ControlRight"){
+        let span = create("span", "word");
+        if(position[i] === " ")
+            span.classList.add("\\");
+        else
+            span.classList.add(`${position[i]}`);
+        span.innerHTML = position[i];
+        dbutt.append(span);
+    } else {
+        for(let j = 0; j < position[i].length; j++){
+            let span = create("span", `${position[i][j]}`);
             if(j === 0)
-                span.className = "up";
+                span.classList.add("up");
             else 
-                span.className = "down";
-            span.id = `${firstrow[i][j]}`;
-            span.innerHTML = firstrow[i][j];
-            divnum.append(span);
+                span.classList.add("down");
+            span.innerHTML = position[i][j];
+            dbutt.append(span);
         }
     }
-}
-
-//draw 2r
-let divv = document.createElement("div");
-divv.id = 'row';
-main.append(divv);
-
-for(let i = 0; i < secondrow.length; i++){
-    let divnum = document.createElement("div");
-    divnum.className = "num";
-    divnum.id = `${row2[i]}`;
-    divv.append(divnum);
-
-    if(row2[i]==="Tab"){
-        let span = document.createElement("span");
-        span.id = `${secondrow[i]}`;
-        span.className = "word";
-        span.innerHTML = secondrow[i];
-        divnum.append(span);
-    }
-    else {
-        for(let j = 0; j < secondrow[i].length; j++){
-            let span = document.createElement("span");
-            if(j === 0)
-                span.className = "up";
-            else 
-                span.className = "down";
-            span.id = `${secondrow[i][j]}`;
-            span.innerHTML = secondrow[i][j];
-            divnum.append(span);
-        }
-    }
-}
-
-//draw 3r
-let divvv = document.createElement("div");
-divvv.id = 'row';
-main.append(divvv);
-
-for(let i = 0; i < third.length; i++){
-    let divnum = document.createElement("div");
-    divnum.className= "num";
-    divnum.id = `${row3[i]}`;
-    divvv.append(divnum);
-
-    if(row3[i]==='CapsLock' || row3[i]==='Enter'){
-        let span = document.createElement("span");
-        span.id = `${third[i]}`;
-        span.className = "word";
-        span.innerHTML = third[i];
-        divnum.append(span);
-    }
-    else {
-        for(let j = 0; j < third[i].length; j++){
-            let span = document.createElement("span");
-            if(j === 0)
-                span.className = "up";
-            else 
-                span.className = "down";
-            span.id = `${third[i][j]}`;
-            span.innerHTML = third[i][j];
-            divnum.append(span);
-        }
-    }
-
-}
-
-//draw 4r
-let divvvv = document.createElement("div");
-divvvv.id = 'row';
-main.append(divvvv);
-
-for(let i = 0; i < fourth.length; i++){
-    let divnum = document.createElement("div");
-    divnum.className = "num";
-    divnum.id = `${row4[i]}`;
-    divvvv.append(divnum);
-
-    if(row4[i]==='ShiftLeft' || row4[i]==='ShiftRight' || row4[i]==="ArrowUp"){
-        let span = document.createElement("span");
-        span.id = `${fourth[i]}`;
-        span.className = "word";
-        span.innerHTML = fourth[i];
-        divnum.append(span);
-    }
-    else {
-        for(let j = 0; j < fourth[i].length; j++){
-            let span = document.createElement("span");
-            if(j === 0)
-                span.className = "up";
-            else 
-                span.className = "down";
-            span.id = `${fourth[i][j]}`;
-            span.innerHTML = fourth[i][j];
-            divnum.append(span);
-        }
-    }
-}
-
-
-//draw 5r
-let divvvvv = document.createElement("div");
-divvvvv.id = 'row';
-main.append(divvvvv);
-for(let i = 0; i < fifth.length; i++){
-    let divnum = document.createElement("div");
-    divnum.className = "num";
-    divnum.id = `${row5[i]}`;
-    divvvvv.append(divnum);
-
-    let span = document.createElement("span");
-    span.id = `${fifth[i]}`;
-    span.className = "word";
-    span.innerHTML = fifth[i];
-    divnum.append(span);
-}
+  }
+};
 
 //localstorage ------------------------------------------
 let u = this.document.getElementsByClassName('up');
@@ -188,64 +85,50 @@ if(localStorage.getItem('leng') === 'ru'){
     }
 }
 
-
-
 //lighting key in keyboard
-window.addEventListener("keydown", function(event) {
-    let inp = this.document.getElementById(`${event.code}`);
+let eu = document.getElementsByClassName('up'); //for all, change
+window.addEventListener("keydown", (event) => {//change - function(event){
+    let inp = this.document.getElementById(`${event.code}`);//change - ${event.code}
+    console.log(event, inp);
     inp.style.background = "grey";
     inp.style.borderRadius = "12px";
-  }, true);
+    
 
-window.addEventListener("keyup", function(event) {
-    let inp = this.document.getElementById(`${event.code}`);
-    inp.style.background = null;
-    inp.style.borderRadius = null;
-  }, true);
-
-
-window.addEventListener( 'keydown', function( event ) {
-    let cl = document.getElementById('CapsLock');
-    let eu = document.getElementsByClassName('up');
+    let cl = document.getElementById('CapsLock');// change
     if(event.getModifierState( 'CapsLock' )){
         for(let i = 0; i < eu.length; i++){
             eu[i].style.display = 'block';
         }
         cl.style.color = "blue";
     }else{
-        //for(let i = 0; i < eu.length; i++){
-        //    console.log('2', up.length);
-        //    up[i].style.display = null;
-        //}
         cl.style.color = null;
     }
-}, true);
 
-window.addEventListener( 'keydown', function( event ) {
-    let eu = document.getElementsByClassName('up');
-    if(event.shiftKey === true){
+    if(event.shiftKey === true){// change
         for(let i = 0; i < eu.length; i++){
             eu[i].style.display = "block";
         }
-    } 
-}, true);
+    }
+});
 
-window.addEventListener( 'keyup', function( event ) {
-    let e = document.getElementsByClassName('up');
+window.addEventListener("keyup", (event) => {
+    let inp = this.document.getElementById(`${event.code}`);
+    inp.style.background = null;
+    inp.style.borderRadius = null;
+
     if(event.shiftKey === false && !event.getModifierState('CapsLock')){
-        for(let i = 0; i < e.length; i++){
-            e[i].style.display = 'none';
+        for(let i = 0; i < eu.length; i++){
+            eu[i].style.display = 'none';
         }
-    } 
-}, true);
-
+    }
+});
 
 //click case
 window.addEventListener("click", function(event) {
     let textarea = this.document.getElementById("inp");
-    let cl = document.getElementById('CapsLock'); //newwwwwwwwwww
+    let cl = document.getElementById('CapsLock');
 
-    if(event.target.parentNode.className === "num"){
+    if(event.target.parentNode.className === "button"){ //change "num"
 
         event.target.parentNode.style.background = "grey";
         event.target.parentNode.style.borderRadius = "12px";
@@ -261,11 +144,9 @@ window.addEventListener("click", function(event) {
             textarea.value += " ";
         }
         else if (event.target.innerHTML === "Enter"){
-            //console.log(textarea.value);
             textarea.value += "\n";
         }
         else if (event.target.innerHTML === "Tab"){
-            //console.log(textarea.value);
             textarea.value += "  ";
         }
         else if (event.target.innerHTML === "CapsLock"){
@@ -302,16 +183,12 @@ window.addEventListener("click", function(event) {
         else {
             textarea.value += event.target.innerHTML;
         }
-    //console.log(event.target.parentNode, event.target.parentNode.className, event.target.innerHTML);//event.target.parentNode.id);
     }
 }, true);
 
 
 
 //ru case en case --------------------------------------------------------
-//let ru2 = [["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"]];
-//let ru3 = [["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"]];
-//let ru4 = [["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
 let upe = this.document.getElementsByClassName('up');
 let downe = this.document.getElementsByClassName('down');
 
@@ -357,15 +234,10 @@ window.addEventListener( 'keydown', function( event ) {
     }
 }, true);
 
-
-
-
 //localstorage------------------------------------------------
-window.addEventListener("keyup", function( event ) { 
-
-    if(event.key === 'Alt' || event.key === 'Shift'){ // issue this
+window.addEventListener("keyup", function(event) { 
+    if(event.key === 'Alt' || event.key === 'Shift'){
         let upe = this.document.getElementsByClassName('up');
-
         if(upe[0].innerHTML === "~"){
             localStorage.setItem('leng', "en");
         }
@@ -374,10 +246,3 @@ window.addEventListener("keyup", function( event ) {
         }
     }
 }, );
-
-
-//localStorage.getItem('leng') === 'ru'
-//localStorage.getItem('leng') === "en"
-//localStorage.setItem('leng', "en");
-//localStorage.clear();
-//localStorage.setItem('leng', "ru");

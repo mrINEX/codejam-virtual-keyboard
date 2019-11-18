@@ -3,9 +3,8 @@ body {
 }
 span {
     display: block;
-    padding-left: 5px;
 }
-#wrapper {
+.wrapper {
     width: 610px;
     height: 360px;
     background-color: rgb(2, 23, 31);
@@ -18,14 +17,13 @@ span {
     border-radius: 10px;
     box-shadow: 0 0 4px rgba(0,0,21,1.12), 0 8px 10px rgba(0,0,0,3.24);
 }
-#num:hover {
-    background-color: darkgoldenrod;
-}
-#keyboard {
+
+.keyboard {
     width: 590px;
     height: 200px;
 }
-.num {
+
+.button {
     overflow: hidden;
     margin: 1px;
     cursor: pointer;
@@ -34,56 +32,47 @@ span {
     border-radius: 6px;
     background-color: rgb(240, 245, 247);
     border: 1px solid rgb(226, 223, 223);
-    justify-content: space-evenly;
 }
-.num:hover {
+.button:hover {
     background-color: rgb(167, 166, 161);
 }
-#Backspace {
+.Backspace, .Tab, .CapsLock, .Enter, .ShiftLeft, .ShiftRight {
+    justify-content: space-evenly;
+} 
+.Backspace {
     width: 95px;
-    justify-content: space-evenly;
 }
-#Tab {
+.Tab {
     width: 65px;
-    justify-content: space-evenly;
 }
-#CapsLock {
+.CapsLock {
     width: 89px;
-    justify-content: space-evenly;
 }
-#Enter {
+.Enter {
     width: 80px;
-    justify-content: space-evenly;
 }
-#ShiftLeft {
+.ShiftLeft, .ShiftRight {
     width: 85px;
 } 
-#ShiftRight {
-    width: 85px;
-}
-#Space {
+.Space {
     width: 255px;
 }
-#Backslash {
+.Backslash {
     width: 65px;
 }
-#ControlLeft, #ControlRight {
+.ControlLeft, .ControlRight {
     width: 48px;
 }
-#AltRight, #AltLeft{
+.AltRight, .AltLeft{
     width: 40px;
 }
-#inp {
+.input {
     width: 600px;
     height: 150px;
 }
-#row {
+.row {
     display: inline-flex;
 }
-#Shift {
-    padding: 9px 19px;
-}
-
 .up {
     padding: 9px;
     display: none;
@@ -95,22 +84,18 @@ span {
     display: inline-flex;
     padding: 9px 0 8px 0px;
 }
-#ArrowLeft, #ArrowDown, #ArrowRight, #ArrowUp {
+.ArrowLeft, .ArrowDown, .ArrowRight, .ArrowUp {
     font-size: 10px;
 }
-#\ {
+.\ {
     padding: 18px 128px;
 }
-#lt, #dn, #rt, #up {
+.lt, .dn, .rt, .up {
     padding: 12px;
 }
-#Ctrl {
+.Ctrl, .Alt {
     padding: 9px 6px;
 }
-#Win {
+.Win {
     padding: 9px 3px;
 }
-#Alt {
-    padding: 9px 6px;
-}
-
