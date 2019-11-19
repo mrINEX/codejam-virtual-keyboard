@@ -81,21 +81,14 @@ span {
     padding: 9px;
 }
 .word {
-    display: inline-flex;
     padding: 9px 0 8px 0px;
 }
 .ArrowLeft, .ArrowDown, .ArrowRight, .ArrowUp {
     font-size: 10px;
 }
-.\ {
+.\\ {
     padding: 18px 128px;
 }
-.lt, .dn, .rt, .up {
-    padding: 12px;
-}
-.Ctrl, .Alt {
-    padding: 9px 6px;
-}
-.Win {
-    padding: 9px 3px;
+.lar, .dar, .rar, .uar {
+    padding: 12px 9px;
 }

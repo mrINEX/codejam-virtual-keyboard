@@ -1,11 +1,11 @@
 const first = [['~', '`'],["!", '1'],['@','2'],['#','3'],['$','4'],['%','5'],['^','6'],['&','7'],['*','8'],['(','9'],[')','0'],['_','-'],['+','='],'Backspace'];
-const second = [['Tab'],['Q', 'q'],['W', 'w'],['E', 'e'],['R', 'r'],['T', 't'],['Y', 'y'],['U', 'u'],['I', 'i'],['O', 'o'],['P', 'p'],['{', '['],['}', ']'],['|', '\\']];
+const second = [['Tab'],['Q', 'q'],['W', 'w'],['E', 'e'],['R', 'r'],['T', 't'],['Y', 'y'],['U', 'u'],['I', 'i'],['O', 'o'],['P', 'p'],['{', '['],['}', ']'],['|', "\\\\"]];
 const third = [['CapsLock'],['A','a'],['S','s'],['D','d'],['F','f'],['G','g'],['H','h'],['J','j'],['K','k'],['L','l'],[':',';'],['"',"'"],['Enter']];
-const fourth = [['Shift'],['Z','z'],['X','x'],['C','c'],['V','v'],['B','b'],['N','n'],['M','m'],['<',','],['>','.'],['?','/'],['up'],['Shift']];
-const fifth = ['Ctrl','Win','Alt'," ",'Alt','lt','dn','rt','Ctrl'];
+const fourth = [['Shift'],['Z','z'],['X','x'],['C','c'],['V','v'],['B','b'],['N','n'],['M','m'],['<',','],['>','.'],['?','/'],['uar'],['Shift']];
+const fifth = ['Ctrl','Win','Alt'," ",'Alt','lar','dar','rar','Ctrl'];
 
-const ru1 = [["ё","Ё"], ["1","!"], ["2",'"'], ["3",'№'], ["4",";"], ["5","%"], ["6",":"], ["7","?"], ["8","*"], ["9","("], ["0",")"], ["-","_"], ["=","+"], ["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"],["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"],["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
-const en1 = [['~', '`'],["!", '1'],['@','2'],['#','3'],['$','4'],['%','5'],['^','6'],['&','7'],['*','8'],['(','9'],[')','0'],['_','-'],['+','='],['Q', 'q'],['W', 'w'],['E', 'e'],['R', 'r'],['T', 't'],['Y', 'y'],['U', 'u'],['I', 'i'],['O', 'o'],['P', 'p'],['{', '['],['}', ']'],['|', '\\'],['A','a'],['S','s'],['D','d'],['F','f'],['G','g'],['H','h'],['J','j'],['K','k'],['L','l'],[':',';'],['"',"'"],['Z','z'],['X','x'],['C','c'],['V','v'],['B','b'],['N','n'],['M','m'],['<',','],['>','.'],['?','/']];
+const ru1 = [["ё","Ё"], ["1","!"], ["2",'"'], ["3",'№'], ["4",";"], ["5","%"], ["6",":"], ["7","?"], ["8","*"], ["9","("], ["0",")"], ["-","_"], ["=","+"], ["й","Й"], ["ц","Ц"], ["у","У"], ["к","К"], ["е","Е"], ["н","Н"], ["г","Г"], ["ш","Ш"], ["щ","Щ"], ["з","З"], ["х","Х"], ["ъ","Ъ"], ["\\","/"], ["ф","Ф"], ["ы","Ы"], ["в","В"], ["а","А"], ["п","П"], ["р","Р"], ["о","О"], ["л","Л"], ["д","Д"], ["ж","Ж"], ["э","Э"], ["я","Я"], ["ч","Ч"], ["с","С"], ["м","М"], ["и","И"], ["т","Т"], ["ь","Ь"], ["б","Б"], ["ю","Ю"], [".",","]];
+const en1 = [['~','`'], ["!",'1'], ['@','2'], ['#','3'], ['$','4'], ['%','5'], ['^','6'], ['&','7'], ['*','8'], ['(','9'], [')','0'], ['_','-'], ['+','='], ['Q','q'], ['W','w'], ['E','e'], ['R','r'], ['T','t'], ['Y','y'], ['U','u'], ['I','i'], ['O','o'], ['P','p'], ['{','['], ['}',']'], ['|','\\'], ['A','a'], ['S','s'], ['D','d'], ['F','f'], ['G','g'], ['H','h'], ['J','j'], ['K','k'], ['L','l'], [':',';'], ['"',"'"], ['Z','z'], ['X','x'], ['C','c'], ['V','v'], ['B','b'], ['N','n'], ['M','m'], ['<',','], ['>','.'], ['?','/']];
 
 const row1 = ["Backquote", "Digit1", "Digit2", "Digit3", "Digit4","Digit5","Digit6","Digit7","Digit8","Digit9","Digit0", "Minus", "Equal", "Backspace"];
 const row2 = ["Tab", "KeyQ", "KeyW", "KeyE", "KeyR", "KeyT", "KeyY", "KeyU", "KeyI", "KeyO", "KeyP", "BracketLeft", "BracketRight", "Backslash"];
@@ -48,7 +48,7 @@ function drawbutt(row, position, attach){
     let dbutt = create("div", "button");
     dbutt.classList.add(`${row[i]}`);
     attach.append(dbutt);
-    if(row[i] === "Backspace" || row[i] === "Tab" || row[i]==='CapsLock' || row[i]==='Enter' || row[i]==='ShiftLeft' || row[i]==='ShiftRight' || row[i]==="ArrowUp" || row[i]==="ControlLeft" || row[i]==="MetaLeft" || row[i]==="AltLeft" || row[i]==="Space" || row[i]==="AltRight" || row[i]==="ArrowLeft" || row[i]==="ArrowDown" || row[i]==="ArrowRight" || row[i]==="ControlRight"){
+    if(row[i] === "Backspace" || row[i] === "Tab" || row[i]==="CapsLock" || row[i]==="Enter" || row[i]==="ShiftLeft" || row[i]==="ShiftRight" || row[i]==="ArrowUp" || row[i]==="ControlLeft" || row[i]==="MetaLeft" || row[i]==="AltLeft" || row[i]==="Space" || row[i]==="AltRight" || row[i]==="ArrowLeft" || row[i]==="ArrowDown" || row[i]==="ArrowRight" || row[i]==="ControlRight"){
         let span = create("span", "word");
         if(position[i] === " ")
             span.classList.add("\\");
@@ -86,36 +86,32 @@ if(localStorage.getItem('leng') === 'ru'){
 }
 
 //lighting key in keyboard
-let eu = document.getElementsByClassName('up'); //for all, change
-window.addEventListener("keydown", (event) => {//change - function(event){
-    let inp = this.document.getElementById(`${event.code}`);//change - ${event.code}
-    console.log(event, inp);
-    inp.style.background = "grey";
-    inp.style.borderRadius = "12px";
-    
+let eu = document.getElementsByClassName('up');
 
-    let cl = document.getElementById('CapsLock');// change
-    if(event.getModifierState( 'CapsLock' )){
+window.addEventListener("keydown", (event) => {
+    let button = this.document.getElementsByClassName(`${event.code}`);
+    button[0].style.background = "grey";
+    button[0].style.borderRadius = "12px";
+
+    let cl = document.getElementsByClassName('CapsLock');
+    if(event.getModifierState('CapsLock')){
         for(let i = 0; i < eu.length; i++){
             eu[i].style.display = 'block';
         }
-        cl.style.color = "blue";
+        cl[0].style.color = "blue";
     }else{
-        cl.style.color = null;
+        cl[0].style.color = null;
     }
-
-    if(event.shiftKey === true){// change
+    if(event.shiftKey === true){
         for(let i = 0; i < eu.length; i++){
             eu[i].style.display = "block";
         }
     }
 });
-
 window.addEventListener("keyup", (event) => {
-    let inp = this.document.getElementById(`${event.code}`);
-    inp.style.background = null;
-    inp.style.borderRadius = null;
-
+    let button = this.document.getElementsByClassName(`${event.code}`);
+    button[0].style.background = null;
+    button[0].style.borderRadius = null;
     if(event.shiftKey === false && !event.getModifierState('CapsLock')){
         for(let i = 0; i < eu.length; i++){
             eu[i].style.display = 'none';
@@ -125,74 +121,64 @@ window.addEventListener("keyup", (event) => {
 
 //click case
 window.addEventListener("click", function(event) {
-    let textarea = this.document.getElementById("inp");
-    let cl = document.getElementById('CapsLock');
-
-    if(event.target.parentNode.className === "button"){ //change "num"
-
+    let textarea = this.document.getElementsByClassName("input");
+    let cl = document.getElementsByClassName('CapsLock');
+    try{
+      if(event.target.parentNode.classList[0] === "button"){
         event.target.parentNode.style.background = "grey";
         event.target.parentNode.style.borderRadius = "12px";
         this.setTimeout(function() {
             event.target.parentNode.style.background = null;
             event.target.parentNode.style.borderRadius = null;
         }, 200);
-
         if(event.target.innerHTML === "Backspace"){
-            textarea.value = textarea.value.replace(/.$|\n$/, '');
+            textarea[0].value = textarea[0].value.replace(/.$|\n$/, '');
         } 
         else if (event.target.id === " "){
-            textarea.value += " ";
+            textarea[0].value += " ";
         }
         else if (event.target.innerHTML === "Enter"){
-            textarea.value += "\n";
+            textarea[0].value += "\n";
         }
         else if (event.target.innerHTML === "Tab"){
-            textarea.value += "  ";
+            textarea[0].value += "  ";
         }
         else if (event.target.innerHTML === "CapsLock"){
-
             if(event.target.parentNode.style.color !== "blue"){
-                let eu = document.getElementsByClassName('up');
                 for(let i = 0; i < eu.length; i++){
                     eu[i].style.display = 'block';
                 }
                 event.target.parentNode.style.color = "blue";
             } else {
-                let eu = document.getElementsByClassName('up');
                 for(let i = 0; i < eu.length; i++){
                     eu[i].style.display = null;
                 }
                 event.target.parentNode.style.color = null;
             }
         }
-        else if (event.target.innerHTML === "Shift" && cl.style.color !== "blue"){
-            let eu = document.getElementsByClassName('up');
+        else if (event.target.innerHTML === "Shift" && cl[0].style.color !== "blue"){
             for(let i = 0; i < eu.length; i++){
                 eu[i].style.display = "block";
             }
             this.setTimeout(function() {
-                let e = document.getElementsByClassName('up');
-                    for(let i = 0; i < e.length; i++){
-                        e[i].style.display = 'none';
-                    }
+                for(let i = 0; i < eu.length; i++){
+                    eu[i].style.display = 'none';
+                }
             }, 100);
         }
-        else if(event.target.className === "word"){
-            //console.log(event.target.className);
-        }
         else {
-            textarea.value += event.target.innerHTML;
+            if(event.target.innerHTML !== "Shift")
+                textarea[0].value += event.target.innerHTML;
         }
-    }
-}, true);
-
-
+      }
+    }catch(err){let mess = err;}
+});
 
 //ru case en case --------------------------------------------------------
 let upe = this.document.getElementsByClassName('up');
 let downe = this.document.getElementsByClassName('down');
 
-//one
+//shift + alt
 window.addEventListener( 'keydown', function( event ) {
     if(event.repeat && event.shiftKey){
         window.addEventListener( 'keydown', function( event ) {
@@ -209,11 +195,11 @@ window.addEventListener( 'keydown', function( event ) {
                 }
             }
 
-        }, true);
+        });
     }
-}, true);
+});
 
-//two 
+//alt + shift 
 window.addEventListener( 'keydown', function( event ) {
     if(event.repeat && event.altKey){
         window.addEventListener( 'keydown', function( event ) {
@@ -230,9 +216,9 @@ window.addEventListener( 'keydown', function( event ) {
                 }
             }
 
-        }, true);
+        });
     }
-}, true);
+});
 
 //localstorage------------------------------------------------
 window.addEventListener("keyup", function(event) { 
@@ -245,4 +231,4 @@ window.addEventListener("keyup", function(event) {
             localStorage.setItem('leng', "ru");
         }
     }
-}, );
+});
