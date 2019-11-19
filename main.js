@@ -134,7 +134,7 @@ window.addEventListener("click", function(event) {
         if(event.target.innerHTML === "Backspace"){
             textarea[0].value = textarea[0].value.replace(/.$|\n$/, '');
         } 
-        else if (event.target.id === " "){
+        else if (event.target.parentNode.classList[1] === "Space"){
             textarea[0].value += " ";
         }
         else if (event.target.innerHTML === "Enter"){
@@ -167,8 +167,9 @@ window.addEventListener("click", function(event) {
             }, 100);
         }
         else {
-            if(event.target.innerHTML !== "Shift")
+            if(event.target.classList[0] !== "word"){
                 textarea[0].value += event.target.innerHTML;
+            }
         }
       }
     }catch(err){let mess = err;}
@@ -219,7 +220,6 @@ window.addEventListener( 'keydown', function( event ) {
         });
     }
 });
-
 //localstorage------------------------------------------------
 window.addEventListener("keyup", function(event) { 
     if(event.key === 'Alt' || event.key === 'Shift'){
