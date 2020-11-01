@@ -20,11 +20,13 @@ span {
     padding: 20px 10px 40px 10px;
     border-radius: 10px;
     box-shadow: 0 0 4px rgba(0,0,21,1.12), 0 8px 10px rgba(0,0,0,3.24);
+    position: relative;
 }
 
 .keyboard {
     width: 590px;
     height: 200px;
+    transition: all .4s ease-out;
 }
 
 .button {
@@ -108,4 +110,20 @@ span {
 
 .hidden {
     display: none;
+}
+
+.visible {
+    width: 25px;
+    height: 15px;
+    background-image: url('./img/eye.png');
+    position: absolute;
+    right: 15px;
+    top: 3px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.op {
+    opacity: 0;
 }
