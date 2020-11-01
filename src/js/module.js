@@ -11,13 +11,22 @@ function drawRow(row, position, attach) {
     attach.append(dbutt);
     if (row[i] === 'Backspace' || row[i] === 'Tab' || row[i] === 'CapsLock' || row[i] === 'Enter' || row[i] === 'ShiftLeft' || row[i] === 'ShiftRight' || row[i] === 'ArrowUp' || row[i] === 'ControlLeft' || row[i] === 'MetaLeft' || row[i] === 'AltLeft' || row[i] === 'Space' || row[i] === 'AltRight' || row[i] === 'ArrowLeft' || row[i] === 'ArrowDown' || row[i] === 'ArrowRight' || row[i] === 'ControlRight') {
       const span = create('span', 'word');
-      if (position[i] === ' ') { span.classList.add('\\'); } else { span.classList.add(`${position[i]}`); }
+      if (position[i] === ' ') {
+        span.classList.add('\\');
+      } else {
+        span.classList.add(`${position[i]}`);
+      }
       span.innerHTML = position[i];
       dbutt.append(span);
     } else {
       for (let j = 0; j < position[i].length; j += 1) {
         const span = create('span', `${position[i][j]}`);
-        if (j === 0) { span.classList.add('up'); } else { span.classList.add('down'); }
+        if (j === 0) {
+          span.classList.add('up');
+          span.classList.add('hidden');
+        } else { 
+          span.classList.add('down');
+        }
         span.innerHTML = position[i][j];
         dbutt.append(span);
       }

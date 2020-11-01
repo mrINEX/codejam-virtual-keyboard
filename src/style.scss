@@ -2,7 +2,11 @@ body {
     background-color: rgba(247, 220, 69, 0.815);
 }
 span {
-    display: block;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
 }
 .wrapper {
     width: 610px;
@@ -81,22 +85,27 @@ span {
 .row {
     display: inline-flex;
 }
-.up {
-    padding: 9px;
-    display: none;
-}
-.down {
-    padding: 9px;
-}
-.word {
-    padding: 9px 0 8px 0px;
-}
+
 .ArrowLeft, .ArrowDown, .ArrowRight, .ArrowUp {
-    font-size: 10px;
+    font-size: 22px;
 }
 .\\ {
     padding: 18px 128px;
 }
 .lar, .dar, .rar, .uar {
     padding: 12px 9px;
+}
+
+.active-capslock {
+    color: blue;
+}
+
+.keyboard-code-active {
+    background-color: gray;
+    border: 1px solid #064642;
+    border-radius: 0.8vw;
+}
+
+.hidden {
+    display: none;
 }
