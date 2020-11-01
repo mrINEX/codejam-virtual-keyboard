@@ -7,17 +7,17 @@ module.exports = {
   entry: ['./src/main.js', './src/style.scss'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   mode: 'development', // production
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'codejam virtual keyboard',
-      filename: 'index.html', // [duild]: filename: '../index.html' [watch] filename: 'index.html'
+      filename: '../index.html', // [duild]: filename: '../index.html' [watch] filename: 'index.html'
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.css'
+      filename: 'style.css',
     }),
   ],
   module: {
@@ -28,14 +28,14 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       }, {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
-        ]
+          MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader',
+        ],
       }, {
         test: /\.(png|svg|jpe?g|gif)$/,
         use: [
@@ -46,7 +46,7 @@ module.exports = {
       }, {
         test: /\.html$/,
         loader: 'html-loader',
-      }
-    ]
+      },
+    ],
   },
 };

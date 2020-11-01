@@ -1,0 +1,136 @@
+body {
+  background-color: rgba(247, 220, 69, 0.815); }
+
+span {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center; }
+
+.wrapper {
+  width: 610px;
+  height: 360px;
+  background-color: #02171f;
+  min-width: 600px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  margin: 20px auto;
+  padding: 20px;
+  padding: 20px 10px 40px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 4px #000015, 0 8px 10px black;
+  position: relative; }
+
+.keyboard {
+  width: 590px;
+  height: 200px;
+  transition: all .4s ease-out; }
+
+.button {
+  overflow: hidden;
+  margin: 1px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  background-color: #f0f5f7;
+  border: 1px solid #e2dfdf; }
+
+.active-key {
+  background: 'grey';
+  border-radius: '12px'; }
+
+.active-blue {
+  color: 'blue'; }
+
+.button:hover {
+  background-color: #a7a6a1; }
+
+.Backspace, .Tab, .CapsLock, .Enter, .ShiftLeft, .ShiftRight {
+  justify-content: space-evenly; }
+
+.Backspace {
+  width: 95px; }
+
+.Tab {
+  width: 65px; }
+
+.CapsLock {
+  width: 89px; }
+
+.Enter {
+  width: 80px; }
+
+.ShiftLeft, .ShiftRight {
+  width: 85px; }
+
+.Space {
+  width: 255px; }
+
+.Backslash {
+  width: 65px; }
+
+.ControlLeft, .ControlRight {
+  width: 48px; }
+
+.AltRight, .AltLeft {
+  width: 40px; }
+
+.input {
+  width: 600px;
+  height: 150px; }
+
+.row {
+  display: inline-flex; }
+
+.ArrowLeft, .ArrowDown, .ArrowRight, .ArrowUp {
+  font-size: 22px; }
+
+.\\ {
+  padding: 18px 128px; }
+
+.lar, .dar, .rar, .uar {
+  padding: 12px 9px; }
+
+.active-capslock {
+  color: blue; }
+
+.keyboard-code-active {
+  background-color: gray;
+  border: 1px solid #064642;
+  border-radius: 0.8vw; }
+
+.hidden {
+  display: none; }
+
+.visible {
+  width: 25px;
+  height: 15px;
+  background-image: url(5f2c50d4aa72a321c68f344810c1dd87.png);
+  position: absolute;
+  right: 15px;
+  top: 3px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer; }
+
+.audioClick {
+  width: 17px;
+  height: 15px;
+  background-image: url(01770cc2285dee197cfc2c6ef70b1737.png);
+  position: absolute;
+  right: 45px;
+  top: 3px;
+  background-size: 17px;
+  background-position: center;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  border: none; }
+
+.op {
+  opacity: 0; }
+
+.op01 {
+  opacity: 0.3; }
+

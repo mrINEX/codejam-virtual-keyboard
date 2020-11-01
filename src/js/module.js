@@ -17,6 +17,15 @@ function drawRow(row, position, attach) {
         span.classList.add(`${position[i]}`);
       }
       span.innerHTML = position[i];
+      if (row[i] === 'MetaLeft') {
+        span.textContent = '';
+        span.style.backgroundImage = 'url("./src/img/lang.png")';
+        span.style.backgroundSize = '24px';
+        span.style.backgroundPosition = 'center';
+        span.style.backgroundRepeat = 'no-repeat';
+        span.style.fontSize = '12px';
+        span.style.textShadow = 'white 0.1vw 0.1vw 1px, white -0.1vw -0.1vw 1px, white 0.1vw -0.1vw 1px, white -0.1vw 0.1vw 1px';
+      }
       dbutt.append(span);
     } else {
       for (let j = 0; j < position[i].length; j += 1) {
@@ -24,7 +33,7 @@ function drawRow(row, position, attach) {
         if (j === 0) {
           span.classList.add('up');
           span.classList.add('hidden');
-        } else { 
+        } else {
           span.classList.add('down');
         }
         span.innerHTML = position[i][j];

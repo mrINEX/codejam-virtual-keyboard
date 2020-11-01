@@ -124,6 +124,24 @@ span {
     cursor: pointer;
 }
 
+.audioClick {
+    width: 17px;
+    height: 15px;
+    background-image: url('./img/audioClick.png');
+    position: absolute;
+    right: 45px;
+    top: 3px;
+    background-size: 17px;
+    background-position: center;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    border: none;
+}
+
 .op {
     opacity: 0;
+}
+
+.op01 {
+    opacity: 0.3;
 }
