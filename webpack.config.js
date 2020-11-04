@@ -14,6 +14,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'codejam virtual keyboard',
+      favicon: './src/img/favicon.png',
       filename: '../index.html', // [duild]: filename: '../index.html' [watch] filename: 'index.html'
     }),
     new MiniCssExtractPlugin({
