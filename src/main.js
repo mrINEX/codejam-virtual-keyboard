@@ -12,8 +12,10 @@ const audioCapsLock = new Audio('./src/audio/capsLock.mp3');
 const audioEnter = new Audio('./src/audio/enter.mp3');
 
 const { create, runRow } = require('./js/module');
+const speechInput = require('./js/SpeechRecognition');
 
 const wr = document.body.appendChild(create('div', 'wrapper'));
+wr.append(create('span', 'voice'));
 wr.append(create('span', 'visible'));
 wr.append(create('button', 'audioClick'));
 wr.append(create('textarea', 'input'));
@@ -32,6 +34,7 @@ const textarea = document.querySelector('textarea');
 const capsLock = document.querySelector('.CapsLock');
 const win = document.querySelector('.Win');
 const lang = localStorage.getItem('lang');
+const voice = document.querySelector('.voice');
 const audioSwitch = document.querySelector('.audioClick');
 audioSwitch.classList.add('op01');
 
@@ -286,5 +289,23 @@ document.querySelector('.visible').addEventListener('click', () => {
     setTimeout(() => {
       main.classList.add('hidden');
     }, 400);
+  }
+});
+
+let recognition;
+voice.addEventListener('click', ({ target }) => {
+  if (target.classList.contains('wave')) {
+    voice.classList.remove('wave');
+    recognition.stop();
+  } else {
+    voice.classList.add('wave');
+    recognition = speechInput();
+    recognition.start();
+    textarea.focus();
+    recognition.onresult = (event) => {
+      textarea.focus();
+      const speechToText = event.results[event.results.length - 1][0].transcript;
+      textarea.setRangeText(speechToText, [textarea.selectionStart], [textarea.selectionEnd], ['end']);
+    };
   }
 });
